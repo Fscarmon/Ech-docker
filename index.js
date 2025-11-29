@@ -2,7 +2,7 @@ const WebSocket = require('ws');
 const net = require('net');
 const http = require('http');
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 const TOKEN = process.env.TOKEN || '23cd62df-4bc6-4623-82a3-a90e8e9cd244';
 const CF_FALLBACK_IPS = process.env.PRIP 
   ? process.env.PRIP.split(',') 
@@ -14,7 +14,7 @@ const encoder = new TextEncoder();
 const server = http.createServer((req, res) => {
   if (req.url === '/') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('WebSocket Proxy Server');
+    res.end('Hello-world');
   } else {
     res.writeHead(404);
     res.end('Not Found');
